@@ -82,7 +82,7 @@ The user experience must feel professional, secure, and empowering, transforming
 - **Whimsical Icons**: Lucide React icons with your color palette
 - **Smooth Animations**: 300ms ease-out transitions with playful micro-interactions
 
- **Typography:** A clean font (e.g., Inter) for UI/body, paired with an elegant and minimal and bold serif (e.g., DM Serif Display) for major headings.
+ **Typography:** A clean font (e.g., Inter) for UI/body, paired with an elegant and minimal and bold serif (e.g., inter) for major headings.
 
 #### **Target Device and Platforms**
 
