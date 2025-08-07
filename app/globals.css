@@ -1,0 +1,290 @@
+@import url('https://fonts.googleapis.com/css2?family=Museo:wght@300;500;700;900&display=swap');
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  --foreground-rgb: 0, 0, 0;
+  --background-start-rgb: 245, 255, 254;
+  --background-end-rgb: 255, 244, 175;
+}
+
+@media (prefers-color-scheme: dark) {
+  :root {
+    --foreground-rgb: 255, 255, 255;
+    --background-start-rgb: 45, 55, 72;
+    --background-end-rgb: 74, 85, 104;
+  }
+}
+
+@layer base {
+  :root {
+    --main: #ED8936;
+    --overlay: rgba(0, 0, 0, 0.8);
+    --bg: #F5FFFE;
+    --bw: #FFFFFF;
+    --blank: #F9FAFB;
+    --text: #2D3748;
+    --mtext: #FFFFFF;
+    --border: #2D3748;
+    --ring: #ED8936;
+    --ring-offset: #FFFFFF;
+    --shadow: 4px 4px 0px 0px #2D3748;
+    
+    --background: 210 40% 98%;
+    --foreground: 222.2 84% 4.9%;
+    --card: 0 0% 100%;
+    --card-foreground: 222.2 84% 4.9%;
+    --popover: 0 0% 100%;
+    --popover-foreground: 222.2 84% 4.9%;
+    --primary: 210 29% 24%;
+    --primary-foreground: 210 40% 98%;
+    --secondary: 210 40% 96%;
+    --secondary-foreground: 222.2 84% 4.9%;
+    --muted: 210 40% 96%;
+    --muted-foreground: 215 16% 47%;
+    --accent: 27 96% 61%;
+    --accent-foreground: 0 0% 9%;
+    --destructive: 0 84.2% 60.2%;
+    --destructive-foreground: 210 40% 98%;
+    --border: 214.3 31.8% 91.4%;
+    --input: 214.3 31.8% 91.4%;
+    --ring: 210 29% 24%;
+    --chart-1: 27 96% 61%;
+    --chart-2: 180 85% 37%;
+    --chart-3: 210 29% 24%;
+    --chart-4: 41 86% 83%;
+    --chart-5: 215 16% 47%;
+    --radius: 1rem;
+  }
+  
+  .dark {
+    --background: 210 29% 24%;
+    --foreground: 210 40% 98%;
+    --card: 210 29% 24%;
+    --card-foreground: 210 40% 98%;
+    --popover: 210 29% 24%;
+    --popover-foreground: 210 40% 98%;
+    --primary: 210 40% 98%;
+    --primary-foreground: 222.2 84% 4.9%;
+    --secondary: 217 32.6% 17.5%;
+    --secondary-foreground: 210 40% 98%;
+    --muted: 217 32.6% 17.5%;
+    --muted-foreground: 215 20.2% 65.1%;
+    --accent: 27 96% 61%;
+    --accent-foreground: 0 0% 9%;
+    --destructive: 0 62.8% 30.6%;
+    --destructive-foreground: 210 40% 98%;
+    --border: 217 32.6% 17.5%;
+    --input: 217 32.6% 17.5%;
+    --ring: 212.7 26.8% 83.9%;
+  }
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+  body {
+    @apply bg-background text-foreground font-sans;
+    font-family: 'Museo', 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+    background-image: url('/cardboard-texture.jpg');
+    background-repeat: repeat;
+    background-attachment: fixed;
+    background-size: 400px 400px;
+  }
+  
+  h1, h2, h3, h4, h5, h6 {
+    font-family: 'Museo', sans-serif;
+    font-weight: 700;
+    line-height: 1.2;
+  }
+}
+
+@layer components {
+  /* Neo-Brutalism Card Styling */
+  .neo-brutal-card {
+    @apply bg-white border-4 border-charcoal rounded-2xl shadow-neo-brutal transition-all duration-200 ease-out;
+  }
+  
+  .neo-brutal-card:hover {
+    @apply shadow-neo-brutal-hover translate-x-[-2px] translate-y-[-2px];
+  }
+  
+  .neo-brutal-card:active {
+    @apply shadow-[2px_2px_0px_0px_theme(colors.charcoal)] translate-x-[2px] translate-y-[2px];
+  }
+  
+  /* Neo-Brutalism Button Styling (preserved from your current setup) */
+  .neo-brutal-button {
+    @apply bg-tangerine text-white border-4 border-charcoal rounded-xl font-semibold;
+    @apply shadow-[4px_4px_0px_0px_theme(colors.charcoal)];
+    @apply hover:shadow-[6px_6px_0px_0px_theme(colors.charcoal)] hover:translate-x-[-1px] hover:translate-y-[-1px];
+    @apply active:shadow-[2px_2px_0px_0px_theme(colors.charcoal)] active:translate-x-[2px] active:translate-y-[2px];
+    @apply transition-all duration-200 ease-out;
+  }
+  
+  /* Enhanced Visual Hierarchy */
+  .section-title {
+    @apply text-3xl md:text-4xl lg:text-5xl font-museo font-bold text-charcoal leading-tight tracking-tight;
+  }
+  
+  .section-subtitle {
+    @apply text-lg md:text-xl text-payne leading-relaxed max-w-2xl;
+  }
+  
+  .card-title {
+    @apply text-xl md:text-2xl font-museo font-bold text-charcoal leading-snug;
+  }
+  
+  .card-description {
+    @apply text-base text-payne leading-relaxed;
+  }
+  
+  /* Improved Focus States */
+  .focus-ring {
+    @apply focus:outline-none focus:ring-4 focus:ring-tangerine/50 focus:ring-offset-2 focus:ring-offset-white;
+  }
+  
+  /* Enhanced Interactive States */
+  .interactive-element {
+    @apply transition-all duration-200 ease-out transform-gpu;
+  }
+  
+  .interactive-element:hover {
+    @apply scale-[1.02] brightness-105;
+  }
+  
+  .interactive-element:active {
+    @apply scale-[0.98] brightness-95;
+  }
+  
+  /* Enhanced Visual Hierarchy */
+  .section-title {
+    @apply text-3xl md:text-4xl lg:text-5xl font-museo font-bold text-charcoal leading-tight tracking-tight;
+  }
+  
+  .section-subtitle {
+    @apply text-lg md:text-xl text-payne leading-relaxed max-w-2xl;
+  }
+  
+  .card-title {
+    @apply text-xl md:text-2xl font-museo font-bold text-charcoal leading-snug;
+  }
+  
+  .card-description {
+    @apply text-base text-payne leading-relaxed;
+  }
+  
+  /* Improved Focus States */
+  .focus-ring {
+    @apply focus:outline-none focus:ring-4 focus:ring-tangerine/50 focus:ring-offset-2 focus:ring-offset-white;
+  }
+  
+  /* Enhanced Interactive States */
+  .interactive-element {
+    @apply transition-all duration-200 ease-out transform-gpu;
+  }
+  
+  .interactive-element:hover {
+    @apply scale-[1.02] brightness-105;
+  }
+  
+  .interactive-element:active {
+    @apply scale-[0.98] brightness-95;
+  }
+  
+  /* Enhanced Button Animations */
+  .animate-pulse-glow {
+    animation: pulse-glow 2s infinite;
+  }
+  
+  @keyframes pulse-glow {
+    0%, 100% {
+      box-shadow: 0 0 0 0 rgba(237, 137, 54, 0.7);
+    }
+    70% {
+      box-shadow: 0 0 0 10px rgba(237, 137, 54, 0);
+    }
+  }
+  
+  .accent-sticker {
+    @apply bg-yellow-200 border-3 border-gray-900 rounded-full px-4 py-2 font-semibold text-sm transform rotate-3 shadow-[3px_3px_0px_0px_theme(colors.gray.900)];
+  }
+  
+  .seamless-bg {
+    background: transparent;
+  }
+  
+  /* Responsive Container System */
+  .container-fluid {
+    @apply w-full max-w-none px-4 sm:px-6 lg:px-8;
+  }
+  
+  .container-narrow {
+    @apply max-w-2xl mx-auto px-4;
+  }
+  
+  .container-wide {
+    @apply max-w-6xl mx-auto px-4;
+  }
+  
+  /* Enhanced Grid System */
+  .grid-responsive {
+    @apply grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-4 md:gap-6 lg:gap-8;
+  }
+  
+  .grid-auto-fit {
+    @apply grid gap-4 md:gap-6;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  }
+  
+  /* Responsive Container System */
+  .container-fluid {
+    @apply w-full max-w-none px-4 sm:px-6 lg:px-8;
+  }
+  
+  .container-narrow {
+    @apply max-w-2xl mx-auto px-4;
+  }
+  
+  .container-wide {
+    @apply max-w-6xl mx-auto px-4;
+  }
+  
+  /* Enhanced Grid System */
+  .grid-responsive {
+    @apply grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-4 md:gap-6 lg:gap-8;
+  }
+  
+  .grid-auto-fit {
+    @apply grid gap-4 md:gap-6;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  }
+  
+  /* Accessibility Enhancements */
+  .skip-link {
+    @apply sr-only focus:not-sr-only focus:absolute focus:top-4 focus:left-4 bg-charcoal text-white px-4 py-2 rounded-md z-50 focus-ring;
+  }
+  
+  /* High Contrast Mode Support */
+  @media (prefers-contrast: high) {
+    .neo-brutal-card {
+      @apply border-black;
+    }
+    
+    .neo-brutal-button {
+      @apply border-black;
+    }
+  }
+  
+  /* Reduced Motion Support */
+  @media (prefers-reduced-motion: reduce) {
+    * {
+      animation-duration: 0.01ms !important;
+      animation-iteration-count: 1 !important;
+      transition-duration: 0.01ms !important;
+    }
+  }
+}
